@@ -2,7 +2,9 @@
 // import HelloDate from "./01/HelloDate" // 하위 컴포넌트를 이렇게 바로바로로 사용하는 것도 됨.
 // import MyClock from './02/MyClock';
 import { FcHome } from "react-icons/fc";
-import MyDiv1 from "./03/MyDiv1";
+// import MyDiv1 from "./03/MyDiv1";
+import MyList from "./04/MyList";
+
 
 function App() {
   return ( // return문 안은 반드시 jsx 문법을 사용해야 함.
@@ -17,10 +19,12 @@ function App() {
       </div>
 
     </header>
-    <main className="w-full h-full flex flex-col justify-start items-center overflow-y-auto-scroll"> 
-       <MyDiv1 />
+    <main className="w-full h-full flex flex-col justify-start items-center overflow-y-auto "> 
+       {/* <MyDiv1 /> */}
        {/* <Hello /> */}
        {/* <MyClock /> */}
+       <MyList />
+       
 
 
     </main>

@@ -14,7 +14,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1 className= 'font-bold text-3xl dark:text-white drop-shadow-lg'><a className=' underline decoration-indigo-500'>Vite </a> + <a className='underline decoration-sky-500'>React</a></h1>
+      <h1 className= 'font-bold text-3xl dark:text-white drop-shadow-lg'>
+        <a className=' underline decoration-indigo-500'>Vite </a> + <a className='underline decoration-sky-500'>React</a></h1>
       <div className="card drop-shadow-lg">
         
         <p className= 'inline-flex items-center justify-center dark:bg-gray-800 rounded-lg px-6 py-8 ring shadow-ml ring-gray-900/5 dark:text-white font-bold text-3xl'>
