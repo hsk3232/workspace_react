@@ -3,7 +3,8 @@
 // import MyClock from './02/MyClock';
 import { FcHome } from "react-icons/fc";
 // import MyDiv1 from "./03/MyDiv1";
-import MyList from "./04/MyList";
+//import MyList from "./04/MyList";
+import Lotto from "./05/Lotto";
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
        {/* <MyDiv1 /> */}
        {/* <Hello /> */}
        {/* <MyClock /> */}
-       <MyList />
+       {/* <MyList /> */}
+       <Lotto />
        
 
 
