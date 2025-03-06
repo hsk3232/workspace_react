@@ -16,17 +16,17 @@ export default function MyListItem({t, i, c, show}) {
   return (
     <div className="w-full h-7/10 m-5 p-2 flex justify-between items-center drop-shadow-lg  bg-gray-200 ">
       
-      <div className="w-3/10 h-full p-5 flex flex-col justify-start items-center">
+      <div className="w-3/10 h-250 p-5 flex flex-col justify-start items-center">
       <img src={i} className="w-full h-auto flex justify-center items-center" alt="html" />
       </div>
       
-      <div className="w-7/10 h-full m-5 flex flex-col inline-felx items-center ">
+      <div className="w-7/10 h-full p-5 flex flex-col inline-felx items-center ">
 
         <div className="w-full h-1/4 pt-5 flex justify-start items-start text-4xl font-bold">
           {t}
           </div>
 
-          <div className="w-full h-3/4  pt-5 flex justify-start items-centertext-2xl  text-stone-700">
+          <div className="w-full h-3/4 pb-2 flex justify-start items-centertext-2xl  text-stone-700">
           {c}
           </div>
 

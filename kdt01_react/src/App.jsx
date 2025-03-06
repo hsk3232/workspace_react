@@ -4,14 +4,15 @@
 import { FcHome } from "react-icons/fc";
 // import MyDiv1 from "./03/MyDiv1";
 //import MyList from "./04/MyList";
-import Lotto from "./05/Lotto";
+//import Lotto from "./05/Lotto";
+import FoodMain from "./06/FoodMain";
 
 
 function App() {
   return ( // return문 안은 반드시 jsx 문법을 사용해야 함.
-    <div className="w-full xl:w-8/10 h-screen mx-auto">
+    <div className="w-full xl:w-8/10 h-screen mx-auto flex flex-col">
 
-    <header className="w-full h-20 bg-gray-950 px-10 flex justify-between items-center">
+    <header className="w-full min-h-20 bg-gray-950 px-10 flex justify-between items-center">
       
 
       <h1 className="text-4xl font-bold text-amber-50">KDT01 👻</h1>
@@ -20,17 +21,18 @@ function App() {
       </div>
 
     </header>
-    <main className="w-full h-full flex flex-col justify-start items-center overflow-y-auto "> 
+    <main className="w-full h-full flex flex-col justify-center items-center overflow-auto"> 
        {/* <MyDiv1 /> */}
        {/* <Hello /> */}
        {/* <MyClock /> */}
        {/* <MyList /> */}
-       <Lotto />
+       {/* <Lotto /> */}
+       <FoodMain />
        
 
 
     </main>
-    <footer className="w-full h-20 bg-gray-200 px-10 inline-flex justify-between items-center">
+    <footer className="w-full min-h-20 bg-gray-200 px-10 inline-flex justify-between items-center">
       <h3 className="m-10 flex justify-start">[K-Digital 부산대 25-1회차] AI 데이터 분석 풀스택 웹 개발자 양성과정</h3>
       <h4 className="m-5 inline-flex justify-between"> ☎️ 051-512-0311  | ✉️ www.pusan.ac.kr </h4>
 
