@@ -1,11 +1,14 @@
  //import Hello from "./01/Hello" //만든 Hello 보냄
 // import HelloDate from "./01/HelloDate" // 하위 컴포넌트를 이렇게 바로바로로 사용하는 것도 됨.
-// import MyClock from './02/MyClock';
+ //import MyClock from './02/MyClock';
 import { FcHome } from "react-icons/fc";
 // import MyDiv1 from "./03/MyDiv1";
 //import MyList from "./04/MyList";
 //import Lotto from "./05/Lotto";
-import FoodMain from "./06/FoodMain";
+//import FoodMain from "./06/FoodMain";
+//import MyToggle from "./07/MyToggle";
+//import MyEffect from "./08/MyEffect";
+import BoxOffice from "./09/BoxOffice";
 
 
 function App() {
@@ -21,14 +24,16 @@ function App() {
       </div>
 
     </header>
-    <main className="w-full h-full flex flex-col justify-center items-center overflow-auto"> 
+    <main className="w-full pt-10 flex flex-grow flex-col justify-start items-center overflow-y-auto"> 
        {/* <MyDiv1 /> */}
        {/* <Hello /> */}
        {/* <MyClock /> */}
        {/* <MyList /> */}
        {/* <Lotto /> */}
-       <FoodMain />
-       
+       {/* <FoodMain /> */}
+       {/* <MyToggle /> */}
+       {/* <MyEffect /> */}
+       <BoxOffice />
 
 
     </main>

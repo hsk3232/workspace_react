@@ -13,11 +13,14 @@ export default function FoodMain() {
   const handleCategory = (c) => {
     console.log("handleCategory", c)
     
-    let tm = Fooddata.filter(item => item["운영주체 분류"].replace(' ', '') == c);
-    console.log("handleCategory", tm)
+    let tm = Fooddata.filter(item => item["운영주체 분류"].replace(' ', '') == c)
+              .map(item => <FoodCard 
+                                      key={item["사업장명"]} 
+                                      obj={item} />);
+    setTags(tm);
 
-    setTags(c
 
+    //console.log("handleCategory", tm)
   }
 
   const bts = category.map(bt => <Tailbutton key={bt}
@@ -27,7 +30,7 @@ export default function FoodMain() {
   />);
 
   return (
-    <div>
+    <div className="w-full h-full flex flex-col items-center">
       <div>
         {bts}
       </div>
