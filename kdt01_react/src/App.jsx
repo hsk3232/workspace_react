@@ -8,7 +8,8 @@ import { FcHome } from "react-icons/fc";
 //import FoodMain from "./06/FoodMain";
 //import MyToggle from "./07/MyToggle";
 //import MyEffect from "./08/MyEffect";
-import BoxOffice from "./09/BoxOffice";
+//import BoxOffice from "./09/BoxOffice";
+import Treffic from "./10/treffic";
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
        {/* <FoodMain /> */}
        {/* <MyToggle /> */}
        {/* <MyEffect /> */}
-       <BoxOffice />
+       {/* <BoxOffice /> */}
+       <Treffic />
 
 
     </main>
