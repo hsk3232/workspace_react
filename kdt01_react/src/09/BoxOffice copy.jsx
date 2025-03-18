@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { FaArrowUp, FaArrowDown } from "react-icons/fa6";
 
 export default function BoxOffice() {
@@ -6,19 +6,13 @@ export default function BoxOffice() {
     const [tags, Settags] = useState([]);
     const [info, Setinfo] = useState([]);
 
-    //날짜 가져오기
-    const [selectedDate, setSelectedDate] = useState();
-    const refDate = useRef();
-
-
     //일일 박스 오피스 정보 가져오기
-    const getFetchData = async (date) => {
-        if (!date) return; // ✅ 안전 장치 추가 (selectedDate가 undefined일 때 방어)
+    const getFetchData = async () => {
         const mvApikey = import.meta.env.VITE_APP_MV_KEY;
-        let formattedDate = date.replaceAll("-", ""); //selectedDate 사용
+        let dt = getYesterday().replaceAll('-', '');
 
         let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`
-        url = `${url}key=${mvApikey}&targetDt=${formattedDate}`;
+        url = `${url}key=${mvApikey}&targetDt=${20250301}`;
 
         const resp = await fetch(url);
         const data = await resp.json();
@@ -101,45 +95,20 @@ export default function BoxOffice() {
         //일
         let day = String(dt.getDate()).padStart(2, '0');
 
-        return `${year}-${month}-${day}`; // YYYY-MM-DD 형식 반환return (year + "-" + month + "-" + day);
+        return (year + "-" + month + "-" + day);
     }
-    
-       // 날짜 변경 핸들러
-       const handleDateChange = (e) => {
-        const inputDate = e.target.value;
-        const maxDate = getYesterday();
 
-        if (inputDate > maxDate) {
-            alert("미래 날짜는 선택할 수 없습니다.");
-            setSelectedDate(maxDate);
-        } else {
-            setSelectedDate(inputDate);
-        }
-    };
-
-  
 
     //컴포넌트가 실행될 때 한 번 fetch를 통해 데이터를 가져오는 함수
-      // selectedDate가 변경될 때마다 API 호출
-      useEffect(() => {
-        const fetchData = async () => {
-            await getFetchData(selectedDate);
-        };
-        fetchData();
-    }, [selectedDate]);
-  
+    useEffect(() => {
+        getFetchData();
+
+    }, []);
+
 
     return (
         <div>
-           <input type="date"
-          name="searchDate"
-          ref={refDate}
-          value={selectedDate} 
-          max={getYesterday()} // ✅ 네가 원한 `getYesterday` 함수 그대로 적용
-          onChange={handleDateChange}
-              className="bg-white"
-          />
-              <table className="table-auto w-full 
+            <table className="table-auto w-full 
                               text-sm text-conter
                                text-gray-500
                                dark:text-gray-400">
@@ -169,7 +138,6 @@ export default function BoxOffice() {
                     {info}
                 </tfoot>
             </table>
-            
         </div>
     )
 
