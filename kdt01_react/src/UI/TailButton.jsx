@@ -13,7 +13,7 @@ export default function TailButton({caption, color, onClick}) {
 
 
   return (
-    <button className={`p-2 m-2 text-base hover:font-bold rounded-lg text-white ${bg[color]} ${bgHover[color]}`} onClick={onClick}>
+    <button className={`w-fit p-2 m-2 text-base hover:font-bold rounded-lg text-white ${bg[color]} ${bgHover[color]}`} onClick={onClick}>
       {caption}
     </button>
   )
