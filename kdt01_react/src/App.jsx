@@ -11,8 +11,8 @@ import { FcHome } from "react-icons/fc";
 //import BoxOffice from "./09/BoxOffice";
 //import Treffic from "./10/treffic";
 //import Myref from "./11/Myref";
-// import Gallery from "./12/Gallery";
-import Festival from "./13/Festival";
+ import Gallery from "./12/Gallery";
+//import Festival from "./13/Festival";
 
 
 function App() {
@@ -40,8 +40,8 @@ function App() {
        {/* <BoxOffice /> */}
        {/* <Treffic /> */}
       {/* <Myref /> */}
-      {/* <Gallery /> */}
-      <Festival />
+      <Gallery />
+      {/* <Festival /> */}
 
 
     </main>
