@@ -6,6 +6,13 @@ export default function Gallery() {
 
     const [tags, Settags] = useState([]);
 
+    //키워드 입력
+    const refInput = useRef;
+
+    
+      
+   
+
     // const item = {
     //     "galContentId": "2988721",
     //     "galContentTypeId": "17",
@@ -23,7 +30,7 @@ export default function Gallery() {
         const mvApikey = import.meta.env.VITE_APP_API_KEY
         
         let url = `https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?`
-        url = `${url}serviceKey=${mvApikey}&numOfRows=100&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=%ed%83%9c%ec%a2%85%eb%8c%80&_type=json`;
+        url = `${url}serviceKey=${mvApikey}&numOfRows=100&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=${encodeURI()}_type=json`;
         
         const resp = await fetch(url);
         const data = await resp.json();
@@ -40,6 +47,25 @@ export default function Gallery() {
         console.log("tm", tm);
     
     }
+
+    //확인
+    const handleClick = () => {
+
+        if (refInput.current.value  == '') {
+            alert("키워드를 입력하세요.") ;
+            refInput.current.focus();
+            return;
+          }
+        
+        getFetchData();
+    }
+
+  //취소
+    const handleReset = () => {
+    refInput.current.value = '' ;
+    refInput.current.focus();
+         Settags([]);
+  }
 
     useEffect(() => {
             getFetchData();
@@ -75,11 +101,11 @@ export default function Gallery() {
                 <div className=" w-fit flex items-center">
                { <TailButton caption="확인"
                     color="blue"
-                    onClick="" />}
+                    onClick={handleClick} />}
                 
                 {<TailButton caption="취소"
                     color="blue"
-                    onClick="" />}
+                    onClick={handleClick} />}
                 </div>
             </form>
 
