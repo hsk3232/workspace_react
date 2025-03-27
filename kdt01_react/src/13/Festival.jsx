@@ -76,12 +76,14 @@ export default function Festival() {
     <h2>부산 축제 정보</h2>
         <div className="p-5 flex items-center w-full mx-auto">
             <TailSelect id="sel1"
-                        pos={sel} 
+                        ops={sel} 
                         ref={refSel}
                         handleChange={handleChange} /> 
         </div>
         <div className="grid grid-cols-3 gap-2">
         {tdata}
+
+        <option selected>축제구 선택</option>
         </div>
     </div>
   )
