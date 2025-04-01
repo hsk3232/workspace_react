@@ -1,15 +1,14 @@
-import React from 'react'
 import TailSelect from '../UI/TailSelect';
 import TailCard from '../UI/TailCard';
 import { useState,  useEffect, useRef } from "react";
 
 export default function Festival() {
     //전체 데이터
-    const [tags, Settags] = useState([]);
+    const [tags, settags] = useState([]);
     //옵션 필터터 데이터
-    const [tdata, Settdata] = useState([]);
+    const [tdata, settdata] = useState([]);
     //옵션값 전달 데이터
-    const [sel, Setsel] = useState([])
+    const [sel, setsel] = useState([])
    
     //옵션 선택을 위한 ref
     const refSel = useRef();
@@ -24,47 +23,38 @@ export default function Festival() {
             const resp = await fetch(url);
             const data = await resp.json();
     
+           
             let dataList = data.getFestivalKr.item;
-            let tm = dataList.map(item => <TailCard key={item.UC_SEQ}
-                                             title={item.TITLE} 
-                                            subtitle={item.TRFC_INFO}
-                                            imgurl={item.MAIN_IMG_NORMAL}
-                                            kws={item.USAGE_DAY_WEEK_AND_TIME} />
-                                           
-            );
+      
             
             //useState 변수(tags) 값 입력
-            Settags(tm);
-            console.log("tm", tm);
-          
+            settags(dataList);
+            console.log("dataList", dataList);
             
             
             
 
         }
        
-        const handleChange = (e) => {
+        const handleChange = () => {
             let tm = tags.filter(item => item.GUGUN_NM == refSel.current.value)
-            
-            Settdata(tm)
+                        .map(item => <TailCard key={item.UC_SEQ}
+              title={item.TITLE} 
+             subtitle={item.TRFC_INFO}
+             imgurl={item.MAIN_IMG_NORMAL}
+             kws={item.USAGE_DAY_WEEK_AND_TIME} />);
+            settdata(tm)
           }
 
     
         useEffect(() => {
                 getFetchData();
-        
             }, []);
 
        useEffect(() => {
-        if(!tage) return;
+        if(!tags) return;
         
-        let tm2 = tags.map(item => item.GUGUN_NM);
-            let list = [... new Set(tm2)];
-            list=list.sort();
-            Setsel(list);
-            console.log("tm2", list);
-
-        let tm = tage.map(item => item.GUGUN_NM);
+        let tm = tags.map(item => item.GUGUN_NM);
         tm = [... new Set(tm)];
         tm.sort();
 

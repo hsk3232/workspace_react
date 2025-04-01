@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import TailNave from './UI/TailNave';
 import Fcst from './15/Fcst';
 import FcstList from './15/FcstList';
+import MyDiv1 from './18/MyDiv1';
 
 import { Link } from "react-router-dom"
 
@@ -69,6 +70,7 @@ function App() {
           <Route path="/Festival" element={ <Festival />} />
           <Route path="/Fcst" element={ <Fcst />} />
           <Route path="/FcstList" element={ <FcstList />} />
+          <Route path="/MyDiv1" element={ <MyDiv1 />} />
            
         </Routes>   
     
