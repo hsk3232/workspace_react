@@ -3,19 +3,24 @@ import styles from './MyClockTime.module.css';
 
 
 export default function MyClockTime(){
+    // useStae 타입선언
     const [currentTime, setCurrentTime] = useState(new Date());
+
     useEffect(() => {
-        let tm = setInterval(() => setCurrentTime(new Date()), 1000);
-        return () => clearInterval(tm);
-    }
-    , []); //두번째 인자가 빈 배열이면, 처음 한번만 실행됨.
-  
+        let tm = setInterval(() => {
+            setCurrentTime(new Date())
+            }, 1000);
+        
+        return () => {
+            clearInterval(tm)
+            }
+        }, []); //두번째 인자가 빈 배열이면, 처음 한번만 실행됨.
 
     return (
         <div className='w-full text-center font-bold text-2xl'>
-        <h2 className="text-3xl flex m-5 justify-center mt-10">⏰현재시각⏰ </h2>
+        <h2 className="pst">⏰현재시각⏰ </h2>
         <div className={styles.pst}>
-         {currentTime.toLocaleTimeString()} 
+        {currentTime.toLocaleTimeString()} 
         
         </div>
         

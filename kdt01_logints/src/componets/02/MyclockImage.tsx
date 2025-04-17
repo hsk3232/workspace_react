@@ -1,5 +1,5 @@
-import clock from '../assets/clock.png'
-function MyClockImage(){
+import clock from '../../assets/clock.png'
+export default function MyClockImage(){
 
     return (
         <>
@@ -9,4 +9,3 @@ function MyClockImage(){
 
 
 }
-export default MyClockImage

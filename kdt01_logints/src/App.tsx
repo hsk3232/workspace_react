@@ -1,11 +1,13 @@
-import Login from "./componets/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Login from "./componets/Login";
 import Home from './componets/Home';
 import Nav from './componets/Nav';
 import Subway from './componets/Subway';
 import TodoList from "./componets/TodoList";
 // import TsxTest from "./componets/TsxTest";
-import MyClock
+import MyClock from './componets/02/MyClock';
+import FoodMain from "./componets/06/FoodMain";
+import Lotto from "./componets/05/Lotto";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path='/subway' element={<Subway />} />
             <Route path='/todolist' element={<TodoList />} />
             <Route path='/clock' element={<MyClock />} />
+            <Route path='/lotto' element={<Lotto />} />
+            <Route path='/food' element={<FoodMain />} />
           </Routes>
 
 

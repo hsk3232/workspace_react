@@ -1,6 +1,7 @@
 import FoodCard from "./FoodCard"
-import Fooddata from "./Fooddata"
-import Tailbutton from "../UI/TailButton"
+import Fooddata from "./Fooddata.json"
+import Tailbutton from "../../UI/TailButton"
+import { FoodItem } from "../../types/Food";
 import { useState } from "react"
 
 export default function FoodMain() {
