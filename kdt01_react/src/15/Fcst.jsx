@@ -50,7 +50,7 @@ export default function Fcst() {
             <div className="w-fit">
              <TailSelect 
                         id="sle1"
-                        refSel={refInfo}
+                        ref={refInfo}
                         ops={tm}
                         handleChange ={()=>handleChange} /></div>
 

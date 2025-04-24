@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
+const TailInput = forwardRef(({ type, id, onFocus }, ref) => {
 
-export default function TailInput({ type, id, ref, onFocus }) {
+
     return (
 
         <>
-            <div className="bg-gray-50 border border-gray-300
-                           text-gray-900 text-lg rounded-lg  text-center
-                           focus:ring-blue-500 focus:border-blue-500 block w-full p-1"/>
+            
 
             <form className="p-5 flex items-center w-full mx-auto">
                 <label htmlFor="search" className="sr-only">Search</label>
@@ -23,6 +22,7 @@ export default function TailInput({ type, id, ref, onFocus }) {
                                 d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
                         </svg>
                     </div>
+                    
 
 
                     <input type={type}
@@ -36,7 +36,10 @@ export default function TailInput({ type, id, ref, onFocus }) {
                         placeholder="관광지를 검색해 보세요!" required />
                 </div>
             </form>
-        </>
+            </>
+       
 
-    )
-}
+);
+});
+
+export default TailInput;

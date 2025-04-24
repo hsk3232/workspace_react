@@ -111,7 +111,7 @@ export default function FcstList() {
         </div>
         <div className='pl-10 '>
           <TailSelect id="selName"
-            refSel={refSel}
+            ref={refSel}
             ops={selList}
             handleChange={handleChange} />
         </div>
