@@ -17,7 +17,7 @@ export default function BoxOffice() {
         const mvApikey = import.meta.env.VITE_APP_MV_KEY;
         let formattedDate = date.replaceAll("-", ""); //selectedDate 사용
 
-        let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`
+        let url = `/kobis/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`
         url = `${url}key=${mvApikey}&targetDt=${formattedDate}`;
 
         const resp = await fetch(url);
