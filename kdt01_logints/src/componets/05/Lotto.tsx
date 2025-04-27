@@ -7,8 +7,9 @@ export default function Lotto() {
   const [lottoTags, setLottoTags] = useState<React.ReactNode[]>([]);
   
   const handleLottoNum = () => {
+     //1-1. 1~45까지의 숫자 중 6개를 랜덤하게 선택
     let lottoNum: number[] = [];
-    //1-1. 1~45까지의 숫자 중 6개를 랜덤하게 선택
+      // lottoNum: (number|string)[] => 이렇게도 선언가능, 이렇게 선언할 시 배열에 2가지 타입이 들어갈 수 있는 것이기 때문에, 이후 배열에 들어가는 모든 요소의 타입은 2가지 동시에 병기해줘야 함.
     
     while (lottoNum.length < 7) {
       let n:number = Math.floor(Math.random() * 45) + 1; // 1~45까지 

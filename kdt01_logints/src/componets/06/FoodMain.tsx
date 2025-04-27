@@ -1,21 +1,21 @@
 import FoodCard from "./FoodCard"
 import Fooddata from "./Fooddata.json"
 import Tailbutton from "../../UI/TailButton"
-import { FoodItem } from "../../types/Food";
+import { FoodItem} from "../../types/Food"
 import { useState } from "react"
 
 export default function FoodMain() {
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState<React.ReactNode>([]);
 
-  let category = Fooddata.map(item => item["운영주체 분류"].replace(' ', ''));
+  let category = Fooddata.map((item:FoodItem) => item["운영주체 분류"].replace(' ', ''));
   category = [...new Set(category)];
   console.log(category);
 
-  const handleCategory = (c) => {
+  const handleCategory = (c:string) => {
     console.log("handleCategory", c)
     
-    let tm = Fooddata.filter(item => item["운영주체 분류"].replace(' ', '') == c)
-              .map(item => <FoodCard 
+    let tm = Fooddata.filter((item:FoodItem) => item["운영주체 분류"].replace(' ', '') == c)
+              .map((item:FoodItem) => <FoodCard 
                                       key={item["사업장명"]} 
                                       obj={item} />);
     setTags(tm);

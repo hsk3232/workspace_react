@@ -1,6 +1,6 @@
-import { completedT } from "../types/Todo"
-import TailButton from "../UI/TailButton"
-import TailSelect from "../UI/TailSelect"
+import { completedT } from "../../types/Todo"
+import TailButton from "../../UI/TailButton"
+import TailSelect from "../../UI/TailSelect"
 import { useEffect, useRef } from "react"
 import { MouseEvent } from "react"
 

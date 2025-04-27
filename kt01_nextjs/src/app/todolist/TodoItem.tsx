@@ -1,5 +1,5 @@
-import TailButton from "../UI/TailButton";
-import { Todo } from "../types/Todo";
+import TailButton from "../../UI/TailButton";
+import { Todo } from "../../types/Todo";
 
 interface TodoItemProps {
     tags:Todo

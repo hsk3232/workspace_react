@@ -1,5 +1,7 @@
-import sarea from "../db/sarea.json"
-import scode from "../db/scode.json"
+//useRef, useState, useEffect를 쓸때는 반드시 use client를 써야함
+'use client'
+import sarea from "../../db/sarea.json"
+import scode from "../../db/scode.json"
 import { useRef, useState, useEffect } from "react"
 
 interface Tdata {
@@ -31,7 +33,7 @@ export default function Subway() {
   // getFetchData(refSel.current?.value)에 ?쓰고 code에 null 들어갈 수 있음으로 같이 ?함
   const getFetchData = async (code?:string) => {
     let url = `https://apis.data.go.kr/6260000/IndoorAirQuality/getIndoorAirQualityByStation?`;
-    url = `${url}serviceKey=${import.meta.env.VITE_APP_API_KEY}`;
+    url = `${url}serviceKey=${process.env.NEXT_PUBLIC_API_KEY}`;
     url = `${url}&pageNo=1&numOfRows=10&resultType=json`;
     url = `${url}&controlnumber=${new Date().toISOString().slice(0, 10).replace(/-/g,'')}07`;
     url = `${url}&areaIndex=${code}`;

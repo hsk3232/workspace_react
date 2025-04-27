@@ -1,9 +1,9 @@
-import { useEffect } from "react"
+'use client'
+import { useEffect, useState } from "react"
 import axios from "axios"
-import { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
-import { Todo } from "../types/Todo";
+import { Todo } from "../../types/Todo";
 
 
 const baseUrl = "http://localhost:3005/todos"

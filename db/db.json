@@ -1,13 +1,18 @@
 {
   "todos": [
     {
-      "id": "9542",
-      "text": "JS 공부",
-      "completed": "O"
+      "id": "d9c6",
+      "text": "안녕",
+      "completed": "X"
     },
     {
-      "id": "0644",
-      "text": "리액트 공부",
+      "id": "f29c",
+      "text": "지민",
+      "completed": "X"
+    },
+    {
+      "id": "1b8d",
+      "text": "지민",
       "completed": "X"
     }
   ]

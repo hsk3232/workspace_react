@@ -27,8 +27,8 @@ export default function FoodCard({obj}:FoodCardProps) {
       "기초푸드마켓" : market,
     };
 
-    //?? null 병합 연산자 : undefined거나 null일 경우에 대체 값으로 market을 사용
-    const imgSrc = imgGubun[obj]["구분"] as keyof imgGubunT] ?? market;
+    //?? null 병합 연산자 : undefined거나 null일 경우 디폴트 값으로 market 이미지를 사용
+    const imgSrc = imgGubun[obj["구분"] as keyof imgGubunT] ?? market;
 
       const handleClick = () => {
           setIsShow(!isShow); //값을 반대로 바꿔 줌
